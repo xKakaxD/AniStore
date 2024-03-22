@@ -1,0 +1,183 @@
+
+body {
+    margin: 0; /* Remove a margem padrão do corpo */
+}
+
+header h1 { /*TODO: TROCAR POR UMA IMAGEM COMO DIZ NO TEAMS*/
+    /*margin: 0;  Remove a margem padrão do texto */
+    color: black; /* Define a cor do texto como branco */
+    font-size: 50px;
+}
+
+header .loja-banner {
+    width: 100%; /* Faz com que a div .loja-banner ocupe toda a largura da tela */
+    display: flex; 
+    background-color: orange; 
+    justify-content: space-around;
+}
+
+#toolBar {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    border-bottom: 1px solid black; /* Adiciona uma linha fina na parte inferior */
+    padding-top: 10px;
+    padding-bottom: 10px; /* Adiciona um espaço entre a linha e o conteúdo interno */
+}
+
+/* Estilizando a classe .busca que engloba a barra de busca e o ícone de lupa */
+.busca {
+    display: flex;
+    align-items: center;
+    width: 500px; /* ajuste conforme necessário */
+    border: 1px solid #ccc;
+    border-radius: 5px; /* bordas levemente arredondadas */
+    overflow: hidden;
+}
+
+/* Estilizando o input de pesquisa dentro da classe .busca */
+.busca input[type="text"] {
+    width: calc(100% - 40px); /* ajuste conforme necessário */
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+/* Estilizando o botão de pesquisa dentro da classe .busca */
+.busca button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 16px; /* Tamanho do ícone */
+}
+/* Estilizando o icone de lupa apos a classe .busca button */
+.busca button::after {
+    content: "\1F50D"; /* Unicode para o ícone de lupa */
+    font-family: "Arial", sans-serif; /* Use uma fonte que inclua o Unicode do ícone */
+    margin-left: 5px; /* Ajuste conforme necessário */
+}
+
+/* Alterando a cor do botão quando o cursor passa por cima */
+.busca button[type="submit"]:hover {
+    background-color: #aaa;
+}
+
+.menu .menu-btn {
+    font-size: 40px; /* Tamanho do ícone */
+    border: none;
+    padding-right: 5px;
+    padding-left: 5px;
+    background: none;
+    cursor: pointer;
+}
+
+.carrinho img{
+    background: none;
+    border: none;
+    padding-right: 5px;
+    padding-left: 5px;
+    cursor: pointer;
+    width: 40px; 
+    height: 40px; 
+    position: relative;
+}
+
+body h2{
+    font-size: 30px;
+}
+
+.destaques h2{
+    margin-left: 5px;
+    text-align: left;
+}
+
+.recomendados{
+    display: flex; 
+    padding-right: 5px;
+    padding-left: 5px;
+    justify-content: space-between; 
+    border-bottom: 1px solid black; 
+}
+
+.lista-prod{
+    display: flex; 
+    padding-right: 5px;
+    padding-left: 5px;
+    justify-content: space-between;    
+}
+
+.cartao-prod {
+    width: 250px;
+    height: auto; /*deve crescer somente verticalmente e decidirmos o tamanho horizontal*/
+    background-color:#DCDCDC;
+    padding-bottom: 20px; /*para o background seguir de acordo com o cartão TODO:dar exemplo somente n acho q devemos usar vai virar bagunça!!! 
+    padding-left: auto;
+    padding-right: auto;*/
+    border-radius: 5px;
+    margin-bottom: 20px; /* Adiciona espaçamento inferior entre os cartões */
+    display: flex; /* Torna o contêiner um flex container */
+    flex-direction: column; /* Define a direção dos itens como coluna */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    }
+
+.cartao-prod h2 { /*TODO: TALVEZ ALTERAR TAMANHO DO TEXTO COM REM?*/
+    font-size: 25px;
+    text-align: center;
+    margin: 0;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.cartao-prod p {
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+    font-size: 25px;
+
+}
+
+.cartao-prod img {
+    width: 100%; /* Faz com que a imagem se ajuste ao tamanho do cartão */
+    height: 250px; /* Faz com que a imagem tenha um tamanho definido TODO: mostrar para o luis como o auto funciona*/ 
+    object-fit: cover; /* Ajusta a imagem para cobrir toda a área disponível */
+    border-radius: 5px; /* Adicionando bordas arredondadas */
+}
+
+.cartao-prod button{
+    margin-top: 20px;
+}
+
+.noticias{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.artigo{
+    width: 60%;
+    align-items: left;
+}
+
+.artigo h1{
+    font-size: 2rem; /*REM faz com que tenha * o número  definido*/
+    line-height: 2.625rem;
+}
+
+.artigo p{
+    font-size: 1.5rem;
+}
+
+.artigo img{
+    width: 100% ;
+    height: auto; /*Faz com que a imagem não fique feia ao redimendionar com a div*/
+}
+
+
+footer {
+    width: 100%; 
+    height: auto;
+    display: flex; 
+    background-color: orange; 
+    justify-content: space-around;
+}
