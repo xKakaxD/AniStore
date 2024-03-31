@@ -1,12 +1,39 @@
+*{
+    /*padding: 0; TODO: FAZER O PADDIN E MARGIN POR COMPONENTE SDDS GAP
+    margin: 0;*/
+    font-family: cursive;
+}
 
 body {
     margin: 0; /* Remove a margem padrão do corpo */
+    background-color: #f1f1f1;
 }
 
-header h1 { /*TODO: TROCAR POR UMA IMAGEM COMO DIZ NO TEAMS*/
-    /*margin: 0;  Remove a margem padrão do texto */
-    color: black; /* Define a cor do texto como branco */
-    font-size: 50px;
+/*body.sidebar-open {
+    overflow: hidden;  Impede a rolagem da página quando o sidebar estiver aberto 
+}*/
+
+main {
+    position: relative;
+    /*min-height: 100vh; Garante que o conteúdo principal ocupe pelo menos toda a altura da janela */
+    z-index: 1;  /*Define um valor de z-index para o main*/
+}
+
+#margem-body {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#margem-direita {
+    margin-right: 5px;
+}
+#margem-esquerda {
+    margin-left: 5px;
+}
+
+header .loja-banner img{
+    height: 150px;
+    width: 250px;
 }
 
 header .loja-banner {
@@ -14,22 +41,38 @@ header .loja-banner {
     display: flex; 
     background-color: orange; 
     justify-content: space-around;
+    margin-bottom: 0;
 }
 
-#toolBar {
+.toolBar {
     display: flex; 
     justify-content: space-between; 
     align-items: center;
     border-bottom: 1px solid black; /* Adiciona uma linha fina na parte inferior */
     padding-top: 10px;
     padding-bottom: 10px; /* Adiciona um espaço entre a linha e o conteúdo interno */
+    position: relative;
+}
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: -300px; /* Esconde o menu lateral na esquerda */
+    width: 300px;
+    height: 100%;
+    background-color: orange; /* Cor de fundo do menu lateral */
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    transition: left 0.3s ease; /* Adiciona uma transição suave ao mostrar/ocultar o menu */
+    z-index: 2; /*Defino um valor acima do meu main para o sidebar sobrepor os componentes*/
 }
 
 /* Estilizando a classe .busca que engloba a barra de busca e o ícone de lupa */
 .busca {
     display: flex;
     align-items: center;
-    width: 500px; /* ajuste conforme necessário */
+    width: 666px; /* ajuste conforme necessário */
     border: 1px solid #ccc;
     border-radius: 5px; /* bordas levemente arredondadas */
     overflow: hidden;
@@ -63,14 +106,74 @@ header .loja-banner {
     background-color: #aaa;
 }
 
-.menu .menu-btn {
+#menu-btn {
     font-size: 40px; /* Tamanho do ícone */
     border: none;
     padding-right: 5px;
     padding-left: 5px;
     background: none;
+    cursor: pointer; /*mudar o cursor do mouse*/
+}
+
+.sidebar #exit-btn {
+    font-size: 0; /* Esconder o texto do botão */
+    background: none; /* Remover qualquer fundo */
+    border: none; /* Remover a borda */
+    padding: 0; /* Remover qualquer preenchimento interno */
+    margin-left: 90%;
+    cursor: pointer; /* Mudar o cursor do mouse */
+}
+
+.sidebar #exit-btn::before,
+.sidebar #exit-btn::after {
+    content: "";
+    position: absolute;
+    width: 3px; /* Largura das linhas */
+    height: 20px; /* Altura das linhas */
+    background-color: black; /* Cor das linhas */
+}
+
+.sidebar #exit-btn::before {
+    transform: rotate(45deg); /* Rotaciona a primeira linha */
+}
+
+.sidebar #exit-btn::after {
+    transform: rotate(-45deg); /* Rotaciona a segunda linha */
+}
+
+.sidebar #exit-btn:hover::before,
+.sidebar #exit-btn:hover::after {
+    background-color: red; /* Altera a cor das linhas ao passar o mouse */
     cursor: pointer;
 }
+
+.navegacao-sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navegacao-sidebar h1{
+    margin-left: 50px;
+}
+.navegacao-sidebar a:link, 
+.navegacao-sidebar a:visited { /*visited para manter o estilo mesmo ja visitado*/
+    background-color: #ffc964;
+    color: blue;
+    width: 150px;
+    padding: 14px 25px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid black;;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .navegacao-sidebar a:hover, 
+  .navegacao-sidebar a:active{
+    background-color: #58a9ff;
+  }
 
 .carrinho img{
     background: none;
@@ -87,42 +190,49 @@ body h2{
     font-size: 30px;
 }
 
-.destaques h2{
-    margin-left: 5px;
-    text-align: left;
-}
-
 .recomendados{
     display: flex; 
     padding-right: 5px;
     padding-left: 5px;
-    justify-content: space-between; 
+    justify-content: space-evenly; 
     border-bottom: 1px solid black; 
+}
+
+.prod-recomendados{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prod-recomendados a{
+    color: #474747;
+    padding: 10px;
 }
 
 .lista-prod{
     display: flex; 
+    flex-wrap: wrap; /* Permite que os produtos quebrem para a próxima linha quando não houver espaço suficiente */
     padding-right: 5px;
     padding-left: 5px;
-    justify-content: space-between;    
+    justify-content: space-evenly;    
 }
 
 .cartao-prod {
     width: 250px;
-    height: auto; /*deve crescer somente verticalmente e decidirmos o tamanho horizontal*/
+    height: 500px; 
     background-color:#DCDCDC;
-    padding-bottom: 20px; /*para o background seguir de acordo com o cartão TODO:dar exemplo somente n acho q devemos usar vai virar bagunça!!! 
-    padding-left: auto;
-    padding-right: auto;*/
+    padding-bottom: 20px;
     border-radius: 5px;
-    margin-bottom: 20px; /* Adiciona espaçamento inferior entre os cartões */
+    margin-bottom: 40px; /* Adiciona espaçamento inferior entre os cartões */
+    margin-left: 100px;
+    margin-right: 100px;
     display: flex; /* Torna o contêiner um flex container */
     flex-direction: column; /* Define a direção dos itens como coluna */
     justify-content: center; /* Centraliza os itens horizontalmente */
     align-items: center; /* Centraliza os itens verticalmente */
     }
 
-.cartao-prod h2 { /*TODO: TALVEZ ALTERAR TAMANHO DO TEXTO COM REM?*/
+.cartao-prod h2 { /*TODO: TALVEZ ALTERAR TAMANHO DO TEXTO COM REM INVES DE PX?*/
     font-size: 25px;
     text-align: center;
     margin: 0;
@@ -135,28 +245,30 @@ body h2{
     padding: 5px;
     text-align: center;
     font-size: 25px;
-
 }
 
 .cartao-prod img {
     width: 100%; /* Faz com que a imagem se ajuste ao tamanho do cartão */
-    height: 250px; /* Faz com que a imagem tenha um tamanho definido TODO: mostrar para o luis como o auto funciona*/ 
+    height: 100%; /* Faz com que a imagem tenha um tamanho definido TODO: mostrar para o luis como o auto funciona*/ 
     object-fit: cover; /* Ajusta a imagem para cobrir toda a área disponível */
     border-radius: 5px; /* Adicionando bordas arredondadas */
 }
 
 .cartao-prod button{
+    font-size: 1.5em;
+    width: 90%;
+    height: 50px;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .noticias{
-    margin-left: 5px;
-    margin-right: 5px;
+    display: flex;
+    justify-content: center;
 }
 
 .artigo{
-    width: 60%;
-    align-items: left;
+    width: 60%;    
 }
 
 .artigo h1{
@@ -173,11 +285,158 @@ body h2{
     height: auto; /*Faz com que a imagem não fique feia ao redimendionar com a div*/
 }
 
+figcaption{ /*legenda das fotos, possivel alteração por pag? ou por class mesmo tipo pra noticias por ex*/
+    
+    padding-left: 5px;
+    border-left: 1px solid black;
+    color: #474747;
+}
+
+.principaisNoticias{
+    width: 40%;
+    display: flex; 
+    flex-direction: column; /* Define a direção dos itens como coluna */
+    align-items: center;
+}
+
+.boxNoticiasAtuais {
+    width: 60%;
+    height: auto;
+    background-color: #e0e0e0;
+    padding: 4px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+/*.boxNoticiasAtuais a {  Faz com que o link seja clicável em qualquer lugar dentro do componente. acho q ainda tem q mexer +
+    display: block;
+    height: 100%;  
+}*/
+
+.voltar-ao-topo a:link, 
+.voltar-ao-topo a:visited{ /*TODO: FAZER FICAR NO CANTO INFERIOR SEM INTERFERIR COM AQUELA BARRA BRANCA */
+    position: absolute; 
+    bottom: 30px; /* Distância a partir do canto inferior */
+    float: right;
+    right: 20px;
+    background-color: orange; /*ffc964*/
+    color: black; 
+    padding: 14px 25px; /* Adiciona preenchimento interno ao link */
+    border-radius: 5px; /* Adiciona bordas arredondadas ao link */
+    border: 1px solid black;
+    text-decoration: none; /* Remove o sublinhado padrão do link */
+    transition: background-color 0.3s; /* Adiciona uma transição suave ao alterar    a cor de fundo do link */
+    z-index: 2;
+}
+
+.voltar-ao-topo a:hover, 
+.voltar-ao-topo a:active {
+    background-color: #8a8a8a; /* Altera a cor de fundo quando o mouse passa por cima do link */
+}
+
+.conteiner-carrinho{
+    padding-top: 20px;
+    height: 1000px;
+    width: 95%;
+    display: flex; 
+    flex-direction: column;
+    align-content: space-evenly;
+    background-color: orange;
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    overflow-y: auto; /* Adiciona barra de rolagem vertical */
+}
+/*TODO: INFORMAÇÕES ABAIXO DO CARRINHO*/
+
+.cartao-prod-selec {
+    width: 250px;
+    height: auto; 
+    background-color:#DCDCDC;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    margin-bottom: 40px; /* Adiciona espaçamento inferior entre os cartões */
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex; /* Torna o contêiner um flex container */
+    flex-direction: column; /* Define a direção dos itens como coluna */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    }
+
+.cartao-prod-selec h2 { 
+    font-size: 25px;
+    text-align: center;
+    margin: 0;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.cartao-prod-selec p {
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.cartao-prod-selec img {
+    width: 100%; /* Faz com que a imagem se ajuste ao tamanho do cartão */
+    height: 100%; /* Faz com que a imagem tenha um tamanho definido*/ 
+    object-fit: cover; /* Ajusta a imagem para cobrir toda a área disponível */
+    border-radius: 5px; /* Adicionando bordas arredondadas */
+}
+
+.fale-conosco{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 70px;
+}
+
+.fale-conosco label {
+    font-weight: bold;
+}
+
+.fale-conosco input[type="text"],
+.fale-conosco textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.fale-conosco textarea {
+    height: 150px;
+}
+
+.fale-conosco input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.fale-conosco input[type="submit"]:hover {
+    background-color: #45a049;
+}
 
 footer {
+    margin-top: 20px;
     width: 100%; 
     height: auto;
     display: flex; 
     background-color: orange; 
     justify-content: space-around;
+    z-index: 1;
+    border-top: 1px solid black;
 }
