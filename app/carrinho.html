@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="_js/menu.js"></script>
+    <title>AniStore Carrinho</title>
+</head>
+<body>
+    <header>
+        <div class="loja-banner" name="loja-banner">
+            <a href="index.html">
+                <img src="img/AniStore.png" alt="AniStore-logo">
+            </a>
+        </div>
+    </header>
+    <!--Início da barra de tarefas-->
+    <main>
+        <div name="toolBar" class="toolBar">
+            <div class="menu-btn">
+                <button id="menu-btn" onclick="toggleMenu()">&#9776;</button>
+            </div>
+            
+            <div class="busca">
+                <input type="text" placeholder="PRODUTOS,ANIMES E OFERTAS..." >
+                <button type="submit">Buscar</button>
+            </div>
+    
+            <div class="carrinho">
+                <a href="carrinho.html">
+                    <img src="img/cart-icon.png" alt="Carrinho">
+                </a> 
+            </div>
+        </div>
+        <!--Final da barra de tarefas-->
+        <!--Inicio do menu lateral-->
+        <div class="sidebar" id="sidebar">
+            <div>
+                <button id="exit-btn" onclick="toggleMenu()"></button>
+                <h1>Menu Principal</h1>
+            </div>
+    
+            <div class="navegacao-sidebar">
+                <a href="index.html">Página Inicial</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="faleconosco.html">Ajuda</a>
+            </div>
+        </div><!--Final menu lateral-->
+        <!--Inicio Carrinho-->
+        <div>
+            <div class="titulo-carrinho">
+                <h2 id="margem-esquerda">Sua sacola</h2>
+            </div>
+            <!--Começo dos produtos no carrinho-->
+            <div class="conteiner-carrinho">
+                <div class="lista-prod">
+                    <div class="cartao-prod-selec">
+                        <img src="img/camisa-all-in-one-animes.jpeg" alt="camisa-tudo-em-um">
+                        <h2>Blusa tudo em um</h2>
+                        <P>P / M / G / GG / XG</P>
+                        <p>R$90,00 3x No Cartão sem juros</p>
+                    </div>
+                    <div class="cartao-prod-selec">
+                        <img src="img/camisa-ksal.jpeg" alt="camisa-ksal">
+                        <h2>Conjunto de casal</h2>
+                        <P>P / M / G / GG / XG</P>
+                        <p>R$120,00 3x No Cartão sem juros</p>
+                    </div>
+                    <div class="cartao-prod-selec">
+                        <img src="img/jordan-inosuke.jpeg" alt="tenis-air-jorndan">
+                        <h2>Tênis Air Jordan</h2>
+                        <P>P / M / G / GG / XG</P>
+                        <p>R$1.400,00 10x No Cartão sem juros</p>
+                    </div>
+                    <div class="cartao-prod-selec">
+                        <img src="img/camisa-trio-kimetsu.jpeg" alt="camisa-trio-kimetsu">
+                        <h2>Blusa tudo em um</h2>
+                        <P>P / M / G / GG / XG</P>
+                        <p>R$90,00 3x No Cartão sem juros</p>
+                    </div>
+                    <div class="cartao-prod-selec">
+                        <img src="img/camisa-ksal.jpeg" alt="camisa-ksal">
+                        <h2>Conjunto de casal</h2>
+                        <P>P / M / G / GG / XG</P>
+                        <p>R$120,00 3x No Cartão sem juros</p>
+                    </div>
+                    <div class="cartao-prod-selec">
+                        <img src="img/jordan-inosuke.jpeg" alt="tenis-air-jorndan">
+                        <h2>Tênis Air Jordan</h2>
+                        <P>P / M / G / GG / XG</P>
+                        <p>R$1.400,00 10x No Cartão sem juros</p>
+                    </div>
+                    <div class="cartao-prod-selec">
+                        <img src="img/camisa-all-in-one-animes.jpeg" alt="camisa-tudo-em-um">
+                        <h2>Blusa tudo em um</h2>
+                        <P>P / M / G / GG / XG</P>
+                        <p>R$90,00 3x No Cartão sem juros</p>
+                    </div>
+                </div>
+                
+            </div><!--Final dos produtos no carrinho-->
+            <!--Inicio da finalização da compra-->
+            <div class="informacoes-compra" style="display: flex;">
+                
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="criadoPor">
+            <h3>Criado por:</h3>
+            <p>Carlos De Moro e Luís Feliphe</p>
+        </div>
+
+        <div class="contato">
+            <h3>Entre em contato:</h3>
+            <p>E-mail: anistore@gmail.com</p>
+            <p>Tel. 8002-8922</p>
+        </div>
+
+        <div class="politicas">
+            <h3> Nossas Politicas </h3>
+            <p>Aviso Legal</p>
+            <p>Politica de Privadidade</p>
+            <p>Politica de Envio</p>
+            <p>Termos de Serviço</p>
+        
+        </div>
+        
+        <div class="direcionamento-footer">
+            <a href="faleconosco.html">Fale Conosco</a>
+        </div>
+        
+        <div class="direitos">
+            <p>© 2024 AniStore. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    </header>
+</body>
+</html>
