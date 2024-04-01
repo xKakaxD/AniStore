@@ -214,7 +214,7 @@ body h2{
     flex-wrap: wrap; /* Permite que os produtos quebrem para a próxima linha quando não houver espaço suficiente */
     padding-right: 5px;
     padding-left: 5px;
-    justify-content: space-evenly;    
+    justify-content: space-evenly;
 }
 
 .cartao-prod {
@@ -248,8 +248,8 @@ body h2{
 }
 
 .cartao-prod img {
-    width: 100%; /* Faz com que a imagem se ajuste ao tamanho do cartão */
-    height: 100%; /* Faz com que a imagem tenha um tamanho definido TODO: mostrar para o luis como o auto funciona*/ 
+    width: 100%; 
+    height: 100%; 
     object-fit: cover; /* Ajusta a imagem para cobrir toda a área disponível */
     border-radius: 5px; /* Adicionando bordas arredondadas */
 }
@@ -310,13 +310,13 @@ figcaption{ /*legenda das fotos, possivel alteração por pag? ou por class mesm
     border-radius: 5px;
 }
 
-/*.boxNoticiasAtuais a {  Faz com que o link seja clicável em qualquer lugar dentro do componente. acho q ainda tem q mexer +
+/*.boxNoticiasAtuais a {  Faz com que o link seja clicável em qualquer lugar dentro do componente. ainda tem q mexer + pra dar certo da forma boa
     display: block;
     height: 100%;  
 }*/
 
 .voltar-ao-topo a:link, 
-.voltar-ao-topo a:visited{ /*TODO: FAZER FICAR NO CANTO INFERIOR SEM INTERFERIR COM AQUELA BARRA BRANCA */
+.voltar-ao-topo a:visited{
     position: absolute; 
     bottom: 30px; /* Distância a partir do canto inferior */
     float: right;
@@ -339,10 +339,10 @@ figcaption{ /*legenda das fotos, possivel alteração por pag? ou por class mesm
 .conteiner-carrinho{
     padding-top: 20px;
     height: 1000px;
-    width: 95%;
-    display: flex; 
+    width: 97%;
+    display: flex;
     flex-direction: column;
-    align-content: space-evenly;
+    align-items: flex-start;
     background-color: orange;
     border: 1px solid black;
     margin: 0 auto;
@@ -350,6 +350,15 @@ figcaption{ /*legenda das fotos, possivel alteração por pag? ou por class mesm
     overflow-y: auto; /* Adiciona barra de rolagem vertical */
 }
 /*TODO: INFORMAÇÕES ABAIXO DO CARRINHO*/
+.detalhes-compra {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: lightgray;
+    width: 97%;
+    margin: 0 auto;
+    border: 1px solid black;
+  }
+  
 
 .cartao-prod-selec {
     width: 250px;
