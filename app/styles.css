@@ -271,6 +271,27 @@ body h2{
     justify-content: center;
 }
 
+.ler-mais-noticias a:link, 
+.ler-mais-noticias a:visited{
+    position: absolute; 
+    bottom: 30px; /* Distância a partir do canto inferior */
+    float: right;
+    right: 200px;
+    background-color: orange; 
+    color: black; 
+    padding: 14px 25px; 
+    border-radius: 5px; 
+    border: 1px solid black;
+    text-decoration: none; 
+    transition: background-color 0.3s; 
+    z-index: 2;
+}
+
+.ler-mais-noticias a:hover, 
+.ler-mais-noticias a:active {
+    background-color: #8a8a8a; 
+}
+
 .artigo{
     width: 60%;    
 }
@@ -289,7 +310,7 @@ body h2{
     height: auto; /*Faz com que a imagem não fique feia ao redimendionar com a div*/
 }
 
-figcaption{ /*legenda das fotos, possivel alteração por pag? ou por class mesmo tipo pra noticias por ex*/
+figcaption{ /*fazer o mesmo dentro da foto referenciando*/
     
     padding-left: 5px;
     border-left: 1px solid black;
@@ -309,7 +330,7 @@ figcaption{ /*legenda das fotos, possivel alteração por pag? ou por class mesm
     background-color: #e0e0e0;
     padding: 4px;
     margin-bottom: 50px;
-    cursor: pointer;
+    /*cursor: pointer;* voltar quando arrumar o link abaixo*/
     border: 1px solid black;
     border-radius: 5px;
 }
@@ -353,7 +374,7 @@ figcaption{ /*legenda das fotos, possivel alteração por pag? ou por class mesm
     margin-bottom: 20px;
     /*overflow-y: auto;  Adiciona barra de rolagem vertical */
 }
-/*TODO: INFORMAÇÕES ABAIXO DO CARRINHO*/
+
 .detalhes-compra {
     margin-top: 20px;
     padding: 10px;
