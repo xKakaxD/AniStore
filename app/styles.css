@@ -235,9 +235,13 @@ body h2{
 .cartao-prod h2 { /*TODO: TALVEZ ALTERAR TAMANHO DO TEXTO COM REM INVES DE PX?*/
     font-size: 25px;
     text-align: center;
+    white-space: nowrap; /* Evita que o texto quebre para a próxima linha */ 
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adiciona reticências (...) quando o texto estiver cortado */
     margin: 0;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding-left: 6%;
+    padding-right: 6%;
+    width: 100%;
 }
 
 .cartao-prod p {
@@ -248,8 +252,8 @@ body h2{
 }
 
 .cartao-prod img {
-    width: 100%; 
-    height: 100%; 
+    width: 250px; 
+    height: 281px; 
     object-fit: cover; /* Ajusta a imagem para cobrir toda a área disponível */
     border-radius: 5px; /* Adicionando bordas arredondadas */
 }
@@ -347,7 +351,7 @@ figcaption{ /*legenda das fotos, possivel alteração por pag? ou por class mesm
     border: 1px solid black;
     margin: 0 auto;
     margin-bottom: 20px;
-    overflow-y: auto; /* Adiciona barra de rolagem vertical */
+    /*overflow-y: auto;  Adiciona barra de rolagem vertical */
 }
 /*TODO: INFORMAÇÕES ABAIXO DO CARRINHO*/
 .detalhes-compra {
@@ -378,9 +382,13 @@ figcaption{ /*legenda das fotos, possivel alteração por pag? ou por class mesm
 .cartao-prod-selec h2 { 
     font-size: 25px;
     text-align: center;
+    white-space: nowrap; /* Evita que o texto quebre para a próxima linha */ 
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adiciona reticências (...) quando o texto estiver cortado */
     margin: 0;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding-left: 6%;
+    padding-right: 6%;
+    width: 100%;
 }
 
 .cartao-prod-selec p {
@@ -391,8 +399,8 @@ figcaption{ /*legenda das fotos, possivel alteração por pag? ou por class mesm
 }
 
 .cartao-prod-selec img {
-    width: 100%; /* Faz com que a imagem se ajuste ao tamanho do cartão */
-    height: 100%; /* Faz com que a imagem tenha um tamanho definido*/ 
+    width: 250px; 
+    height: 281px; 
     object-fit: cover; /* Ajusta a imagem para cobrir toda a área disponível */
     border-radius: 5px; /* Adicionando bordas arredondadas */
 }
@@ -438,6 +446,7 @@ figcaption{ /*legenda das fotos, possivel alteração por pag? ou por class mesm
 .fale-conosco input[type="submit"]:hover {
     background-color: #45a049;
 }
+
 
 footer {
     margin-top: 20px;
