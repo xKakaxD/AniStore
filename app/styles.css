@@ -214,7 +214,9 @@ body h2{
     flex-wrap: wrap; /* Permite que os produtos quebrem para a próxima linha quando não houver espaço suficiente */
     padding-right: 5px;
     padding-left: 5px;
-    justify-content: space-evenly;
+    position: relative;
+    top: 20px;
+    left: 2%;
 }
 
 .cartao-prod {
@@ -372,7 +374,7 @@ figcaption{ /*fazer o mesmo dentro da foto referenciando*/
     border: 1px solid black;
     margin: 0 auto;
     margin-bottom: 20px;
-    /*overflow-y: auto;  Adiciona barra de rolagem vertical */
+    overflow-y: auto;  /*Adiciona barra de rolagem vertical */
 }
 
 .detalhes-compra {
