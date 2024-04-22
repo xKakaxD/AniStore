@@ -1,0 +1,10 @@
+# Arquivos temporários
+# *.tmp
+
+# Arquivos de compilação
+# *.o
+# *.out
+*.txt
+
+# Diretórios específicos
+# /node_modules
