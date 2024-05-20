@@ -63,7 +63,7 @@ header {
 .sidebar {
     position: absolute;
     top: 0;
-    left: -300px; /* Esconde o menu lateral na esquerda */
+    left: -301px; /* Esconde o menu lateral na esquerda */
     width: 300px;
     min-height: auto;
     max-height: calc(100vh - 40px); /* Calcula a altura máxima com base na altura total da tela e na altura do componente interno */
