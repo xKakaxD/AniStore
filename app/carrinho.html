@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ecommerce.css">
     <script src="_js/menu.js"></script>
     <title>AniStore Carrinho</title>
 </head>
@@ -14,10 +14,8 @@
                 <img src="img/AniStore.png" alt="AniStore-logo">
             </a>
         </div>
-    </header>
-    <!--Início da barra de tarefas-->
-    <main>
-        <div name="toolBar" class="toolBar">
+        <!--Início da barra de tarefas-->
+        <div name="nav-bar" class="nav-bar">
             <div class="menu-btn">
                 <button id="menu-btn" onclick="toggleMenu()">&#9776;</button>
             </div>
@@ -32,21 +30,23 @@
                     <img src="img/cart-icon.png" alt="Carrinho">
                 </a> 
             </div>
+            <!--Inicio do menu lateral-->
+            <div class="sidebar" id="sidebar">
+                <div>
+                    <button id="exit-btn" onclick="toggleMenu()"></button>
+                    <h1>Menu Principal</h1>
+                </div>
+        
+                <div class="navegacao-sidebar">
+                    <a href="index.html">Página Inicial</a>
+                    <a href="produtos.html">Produtos</a>
+                    <a href="faleconosco.html">Ajuda</a>
+                </div>
+            </div><!--Final menu lateral-->
         </div>
         <!--Final da barra de tarefas-->
-        <!--Inicio do menu lateral-->
-        <div class="sidebar" id="sidebar">
-            <div>
-                <button id="exit-btn" onclick="toggleMenu()"></button>
-                <h1>Menu Principal</h1>
-            </div>
-    
-            <div class="navegacao-sidebar">
-                <a href="index.html">Página Inicial</a>
-                <a href="produtos.html">Produtos</a>
-                <a href="faleconosco.html">Ajuda</a>
-            </div>
-        </div><!--Final menu lateral-->
+    </header>
+    <main>
         <!--Inicio Carrinho-->
         <div>
             <div class="titulo-carrinho">
