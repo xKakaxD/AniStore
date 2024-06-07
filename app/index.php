@@ -1,3 +1,7 @@
+<?php
+    include '_componentes/conexao.php'; // Inclui a conexão com o banco de dados
+    //include '_componentes/autenticado.php'; // Verifica se o usuário está autenticado
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,7 +13,7 @@
 </head>
 <body>
     <header>
-        <?php include "_componentes/header.php" ?>
+        <?php include "_componentes/header.php"?>
     </header>
     <main>     
         <?php include "_componentes/produtos-recomendados.php" ?>

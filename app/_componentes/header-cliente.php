@@ -1,6 +1,6 @@
 
-        <div class="loja-banner" name="loja-banner" id="top">
-            <a href="index.php">
+<div class="loja-banner" name="loja-banner" id="top">
+            <a href="telaInicialCliente.php">
                 <img src="img/AniStore.png" alt="AniStore-logo">
             </a>
         </div>

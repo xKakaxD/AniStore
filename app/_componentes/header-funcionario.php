@@ -1,6 +1,6 @@
 
-        <div class="loja-banner" name="loja-banner" id="top">
-            <a href="index.php">
+<div class="loja-banner" name="loja-banner" id="top">
+            <a href="telaInicialFuncionario.php">
                 <img src="img/AniStore.png" alt="AniStore-logo">
             </a>
         </div>
@@ -32,7 +32,6 @@
                     <a href="produtos.php">Produtos</a>
                     <a href="carrinho.php">Meus Produtos</a>
                     <a href="noticias.php">Noticias</a>
-                    <a href="faleconosco.php">Ajuda</a>
                 </div>
                 
             </div><!--Final menu lateral-->
