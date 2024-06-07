@@ -50,10 +50,18 @@ if (isset($_GET["logout"]) && $_GET["logout"] == true) { // Verifica se o usuár
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AniStore - Login</title>
     <link rel="stylesheet" href="ecommerce.css">
+    <script src="_js/menu.js"></script>
+    <script src="_js/login.js"></script>
+    <title>AniStore - Login</title>
+    
 </head>
 <body>
+
+    <header>
+    <?php include "_componentes/header.php" ?>
+    </header>
+
     <h2>Autenticar</h2>
     <p>
         <?php 
@@ -63,12 +71,24 @@ if (isset($_GET["logout"]) && $_GET["logout"] == true) { // Verifica se o usuár
         } else {
             if (!empty($mensagem_erro)) echo "<p>$mensagem_erro</p>"; // Exibe uma mensagem de erro, se houver
         ?>
-        <form action="login.php" method="post">
-            Login: <input type="text" name="login" required /> <br> <!-- Campo para o login -->
-            Senha: <input type="password" name="senha" required /> <br> <!-- Campo para a senha -->
-            <input type="submit" value="Autenticar" /> <!-- Botão de envio -->
-        </form>
+
+<div class="containerLogin">
+    <form id="loginForm" action="login.php" method="post">
+        <label for="telaLogin">Login:</label>
+        <input type="text" id="telaLogin" name="login" required placeholder="Insira o seu Login" /><br>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required placeholder="Insira a sua senha" /><br>
+        <input type="submit" value="Autenticar" onclick="validaLogin()" />
+    </form>
+</div>
+
+
+
         <?php } ?>
     </p>
+
+    <footer>
+         <?php include "_componentes/footer.php" ?>
+    </footer>
 </body>
 </html>
