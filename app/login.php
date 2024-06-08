@@ -1,7 +1,10 @@
 <?php
 session_start(); // Inicia a sessão
 
-include '_componentes/conexao.php'; // Inclui o arquivo de conexão com o banco de dados
+require_once "_dao/Database.php"; // Inclui o arquivo de conexão com o banco de dados
+
+$database = new Database();
+$conexao = $database->getConection();
 
 $mensagem_erro = ''; // Inicializa a variável de mensagem de erro
 
@@ -10,12 +13,13 @@ if (isset($_POST["login"])) { // Verifica se o formulário de login foi submetid
     $senha = hash('sha256', $_POST["senha"]); // Criptografa a senha usando SHA-256
 
     // Prepara uma consulta SQL para verificar o login e a senha no banco de dados
-    $stmt = $conexao->prepare("SELECT * FROM tb_usuarios WHERE email = :login AND senha = :senha");
-    $stmt->bindParam(':login', $login); // Vincula o parâmetro :login ao valor de $login
-    $stmt->bindParam(':senha', $senha); // Vincula o parâmetro :senha ao valor de $senha
+    $stmt = $conexao->prepare("SELECT * FROM tb_usuarios WHERE email = ? AND senha = ?");
+    $stmt->bind_param("ss", $login, $senha); // Vincula os parâmetros
+
     $stmt->execute(); // Executa a consulta
     
-    $usuario = $stmt->fetch(PDO::FETCH_ASSOC); // Busca o resultado da consulta
+    $result = $stmt->get_result(); // Obtém o resultado da consulta
+    $usuario = $result->fetch_assoc(); // Busca o resultado da consulta
 
     if ($usuario) { // Verifica se um usuário foi encontrado
         $_SESSION["logado"] = true; // Define a sessão como logado
@@ -25,17 +29,19 @@ if (isset($_POST["login"])) { // Verifica se o formulário de login foi submetid
         // Redireciona para a página de acordo com o tipo de usuário
         if ($usuario['tipo_usuario'] == 'F') { // Verifica se o tipo de usuário é 'F' (funcionário)
             header("Location: pagina_funcionario.php"); // Redireciona para a página de funcionário
-        } elseif($usuario['tipo_usuario'] == 'C'){
-              header("Location: pagina_cliente.php");
-        } // Redireciona para a página de cliente
-        else {
-            header("Location: index.php"); // Redireciona para a página de cliente
+        } elseif ($usuario['tipo_usuario'] == 'C') {
+            header("Location: pagina_cliente.php"); // Redireciona para a página de cliente
+        } else {
+            header("Location: index.php"); // Redireciona para a página inicial
         }
         exit; // Interrompe a execução do script após o redirecionamento
     } else {
         // Define a mensagem de erro caso o login falhe
         $mensagem_erro = "Usuário ou senha incorretos.";
     }
+
+    $stmt->close(); // Fecha a declaração
+    $database->closeConnection(); // Fecha a conexão
 }
 
 if (isset($_GET["logout"]) && $_GET["logout"] == true) { // Verifica se o usuário pediu para sair
@@ -81,8 +87,6 @@ if (isset($_GET["logout"]) && $_GET["logout"] == true) { // Verifica se o usuár
         <input type="submit" value="Autenticar" onclick="validaLogin()" />
     </form>
 </div>
-
-
 
         <?php } ?>
     </p>

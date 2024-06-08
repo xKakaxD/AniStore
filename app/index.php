@@ -1,5 +1,5 @@
 <?php
-    include '_componentes/conexao.php'; // Inclui a conexão com o banco de dados
+    require_once "_dao/DataBase.php"; // Inclui a conexão com o banco de dados
     //include '_componentes/autenticado.php'; // Verifica se o usuário está autenticado
 ?>
 <!DOCTYPE html>
