@@ -1,6 +1,6 @@
 <?php
     require_once "_dao/DataBase.php"; // Inclui a conexão com o banco de dados
-    //include '_componentes/autenticado.php'; // Verifica se o usuário está autenticado
+    require_once "_dao/ProdutoDAO.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
