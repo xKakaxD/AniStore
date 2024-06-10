@@ -441,6 +441,18 @@ figcaption{ /*fazer o mesmo dentro da foto referenciando*/
     border-radius: 5px; /* Adicionando bordas arredondadas */
 }
 
+.cartao-prod-selec button { 
+
+    background-color: #c20a0a;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+
 .fale-conosco{
     max-width: 500px;
     margin: 0 auto;
