@@ -1,4 +1,4 @@
-<div class="cartao-prod">       
+<div class="cartao-prod-selec">       
     <img src="<?php echo htmlspecialchars($produto['image_url']); ?>" alt="<?php echo htmlspecialchars($produto['nome']); ?>">
     <h2><?php echo htmlspecialchars($produto['nome']); ?></h2>
     <p>R$<?php echo number_format($produto['valor'], 2, ',', '.'); ?> 3x No Cartão sem juros</p>

@@ -30,9 +30,10 @@
                     // Exibe os produtos no carrinho
                     foreach ($produtos_no_carrinho as $produto) {
             ?>
-                        <div class="cartao-prod-selec">
-                            <?php include "_componentes/cartao-produto-carrinho.php" ?>
-                        </div>
+                        
+                    <?php include "_componentes/cartao-produto-carrinho.php" ?>
+                    
+                        
             <?php
                     }
                 } else {
