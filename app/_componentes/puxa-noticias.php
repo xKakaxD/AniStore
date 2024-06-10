@@ -1,86 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="ecommerce.css">
-    <script src="_js/menu.js"></script>
-    <title>AniStore Home</title>
-</head>
-<body>
-    <header>
-        <div class="loja-banner" name="loja-banner" id="top">
-            <a href="index.html">
-                <img src="img/AniStore.png" alt="AniStore-logo">
-            </a>
-        </div>
-        <!--Início da barra de tarefas-->
-        <div name="nav-bar" class="nav-bar">
-            <div class="menu-btn">
-                <button id="menu-btn" onclick="toggleMenu()">&#9776;</button>
-            </div>
-            
-            <div class="busca">
-                <input type="text" placeholder="PRODUTOS,ANIMES E OFERTAS..." >
-                <button type="submit">Buscar</button>
-            </div>
-    
-            <div class="carrinho">
-                <a href="carrinho.html">
-                    <img src="img/cart-icon.png" alt="Carrinho">
-                </a> 
-            </div>
-             <!--Inicio do menu lateral-->
-            <div class="sidebar" id="sidebar">
-                <div>
-                    <button id="exit-btn" onclick="toggleMenu()"></button>
-                    <h1>Menu Principal</h1>
-                </div>
-        
-                <div class="navegacao-sidebar">
-                    <a href="produtos.html">Produtos</a>
-                    <a href="carrinho.html">Meus Produtos</a>
-                    <a href="faleconosco.html">Ajuda</a>
-                </div>
-                
-            </div><!--Final menu lateral-->
-        </div>
-        <!--Final da barra de tarefas-->   
-    </header>
-    <main>     
-        <!--Margem divisora com o botão de ver mais-->
-        <div class="prod-recomendados">
-            <h2 id="margem-esquerda">Produtos Recomendados</h2>
-            <a id="prod-recomendados" href="produtos.html">Ver todos produtos</a>
-        </div>
-        <div class="destaques">
-            <!--Conteúdo do banner com produtos recomendados-->
-            <div class="recomendados">
-                <div class="cartao-prod">
-                    <img src="img/camisa-all-in-one-animes.jpeg" alt="camisa-tudo-em-um">
-                    <h2>Blusa tudo em um</h2>
-                    <P>P / M / G / GG / XG</P>
-                    <p>R$90,00 3x No Cartão sem juros</p>
-                    <button>Comprar</button>
-                </div>
-                <div class="cartao-prod">
-                    <img src="img/camisa-ksal.jpeg" alt="camisa-ksal">
-                    <h2>Conjunto de casal</h2>
-                    <P>P / M / G / GG / XG</P>
-                    <p>R$120,00 3x No Cartão sem juros</p>
-                    <button>Comprar</button>
-                </div>
-                <div class="cartao-prod">
-                    <img src="img/jordan-inosuke.jpeg" alt="tenis-air-jorndan">
-                    <h2>Tênis Air Jordan</h2>
-                    <P>P / M / G / GG / XG</P>
-                    <p>R$1.400,00 10x No Cartão sem juros</p>
-                    <button>Comprar</button>
-                </div>
-                
-            </div>
-        </div>
-        <h2 id="margem-esquerda">Notícias da atualidade</h2>
+<h2 id="margem-esquerda">Notícias da atualidade</h2>
         <div class="ler-mais-noticias"><a href="https://www.bbc.com/portuguese/articles/c3g75mv7vvko#:~:text=Toriyama%20tinha%20obras%20incompletas%20no,comunicado%20do%20site%20Dragon%20Ball." target="_blank">Leia toda a matéria na BBC</a></div>
         <div class="noticias" id="margem-esquerda">
              <div id="noticiaDestaque">
@@ -94,7 +12,7 @@
                     <p>A série de quadrinhos Dragon Ball estreou em 1984. Ela segue um menino chamado Son Goku em sua busca para coletar bolas de dragão mágicas para defender a Terra contra humanoides alienígenas chamados Saiyans.</p>
                     <img src="https://ichef.bbci.co.uk/ace/ws/800/cpsprodpb/48f6/live/64aaa8b0-dd42-11ee-b83b-0f87a864f372.jpg" alt="akira-1984" >
                     <figcaption>Akira Toriyama em uma foto tirada em 1984</figcaption>
-                     <!--Puxando a imagem do servidor da BBC, poderia ter hospedado em qualquel site come sse serviço usdei de exemplo-->
+                     <!--Puxando a imagem do servidor da BBC, poderia ter hospedado em qualquer site-->
                     <h2>O começo</h2>
                     <p>Akira Toiriyama nasceu em 1955, na pequena cidade de Kiyosu, na província de Aichi, no leste do Japão.</p><br>
                     <p>Como o próprio Toriyama explicou, desde a escola ele se interessava por mangás, e foi entre seus colegas de classe que ele teve seu primeiro público.</p><br>
@@ -120,38 +38,3 @@
                 </div>
             </div>
         </div>
-        <div class="voltar-ao-topo">
-            <a class="voltar-ao-topo" href="#top">Voltar ao topo</a>
-        </div>
-    </main>
-    <footer>
-        <div class="criadoPor">
-            <h3>Criado por:</h3>
-            <p>Carlos De Moro e Luís Feliphe</p>
-        </div>
-
-        <div class="contato">
-            <h3>Entre em contato:</h3>
-            <p>E-mail: anistore@gmail.com</p>
-            <p>Tel. 8002-8922</p>
-        </div>
-
-        <div class="politicas">
-            <h3> Nossas Politicas </h3>
-            <p>Aviso Legal</p>
-            <p>Politica de Privadidade</p>
-            <p>Politica de Envio</p>
-            <p>Termos de Serviço</p>
-        
-        </div>
-        
-        <div class="direcionamento-footer">
-            <a href="faleconosco.html">Fale Conosco</a>
-        </div>
-        
-        <div class="direitos">
-            <p>© 2024 AniStore. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-</body>
-</html>
