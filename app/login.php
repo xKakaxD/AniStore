@@ -70,13 +70,17 @@ if (isset($_GET["logout"]) && $_GET["logout"] == true) { // Verifica se o usuár
 
     <h2>Autenticar</h2>
     <p>
-        <?php 
-        if (isset($_SESSION["logado"]) && $_SESSION["logado"] == true) { // Verifica se o usuário está logado
-            echo "Usuário Autenticado"; // Exibe uma mensagem de usuário autenticado
-            echo "<a href='login.php?logout=true'>Logout</a>"; // Exibe um link para logout
-        } else {
-            if (!empty($mensagem_erro)) echo "<p>$mensagem_erro</p>"; // Exibe uma mensagem de erro, se houver
-        ?>
+
+    <?php 
+if (isset($_SESSION["logado"]) && $_SESSION["logado"] == true) { // Verifica se o usuário está logado
+    echo "<div class='logout-container'>"; // Inicia o contêiner maior
+    echo "<div class='logout-box'>"; // Inicia o quadro em torno do botão de logout
+    echo "<a class='logout-btn' href='login.php?logout=true'>Logout</a>"; // Exibe um link para logout
+    echo "</div>"; // Fecha o quadro
+    echo "</div>"; // Fecha o contêiner
+} else {
+    if (!empty($mensagem_erro)) echo "<p>$mensagem_erro</p>"; // Exibe uma mensagem de erro, se houver
+?>
 
 <div class="containerLogin">
     <form id="loginForm" action="login.php" method="post">
