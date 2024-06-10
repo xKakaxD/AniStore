@@ -1,14 +1,14 @@
 <?php 
     session_start();
 
-    if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+    if (isset($_GET['adicionar']) && is_numeric($_GET['adicionar'])) {
         // Verifique se a session 'carrinho' já existe
         if (!isset($_SESSION['carrinho'])) {
             $_SESSION['carrinho'] = array(); // Se não existe, crie um array vazio
         }
         
         // Adicione o ID do produto à session 'carrinho'
-        $_SESSION['carrinho'][] = $_GET['id'];
+        $_SESSION['carrinho'][] = $_GET['adicionar'];
     
         // Redirecione de volta para a página anterior ou para a página do carrinho
         header("Location: /faculdade/anistore/app/carrinho.php");

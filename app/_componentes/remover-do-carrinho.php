@@ -18,7 +18,7 @@ if (isset($_GET['excluir']) && is_numeric($_GET['excluir'])) {
     exit();
 } else {
     // Se o ID do produto não foi passado ou não é um número válido, redirecione para a página inicial
-    header("Location: index.php");
+    header("Location: /faculdade/anistore/app/index.php");
     exit();
 }
 ?>
