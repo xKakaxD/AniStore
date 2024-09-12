@@ -29,11 +29,8 @@
                 if (!empty($produtos_no_carrinho)) {
                     // Exibe os produtos no carrinho
                     foreach ($produtos_no_carrinho as $produto) {
-            ?>
-                        
-                    <?php include "_componentes/cartao-produto-carrinho.php" ?>
-                    
-                        
+            ?>    
+                    <?php include "_componentes/cartao-produto-carrinho.php" ?>            
             <?php
                     }
                 } else {
